@@ -7,7 +7,7 @@ import ArrowRight from 'assets/Icons/ArrowRight'
 
 export const ChangePage = ({ asPath, query, pageLimit }) => {
   const router = useRouter()
-  const pageNumberToGo = Number(router.query.page) ? Number(router.query.page) : 1
+  const pageNumberToGo = Number(router.query.page) > 0 ? Number(router.query.page) : 1
   const [page, setPage] = useState(pageNumberToGo)
   const buttonLeftDisabled = page === 1 ? 'button-disabled' : ''
   const buttonRightDisabled = page === pageLimit ? 'button-disabled' : ''
